@@ -37,4 +37,4 @@ Os indicadores de "Saldo", "Receita" e "Despesa" não refletem os valores das tr
 ### Evidências:
 * **Lógica:** Transação de R$ 3.000,00 visível na lista, mas card de Receita exibe R$ 0,00.
 * **UI:** Textos sobrepostos no gráfico de pizza, tornando a legenda ilegível.
-* **Print:** ![Bug Dashboard](../evidencias/ErroDashboard.png)
+* **Print:** ![Bug Dashboard](../evidencias/Dashboard.png)
