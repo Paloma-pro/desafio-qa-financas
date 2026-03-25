@@ -13,7 +13,7 @@ Ao excluir um registro de `Pessoa`, as `Transações` vinculadas a ela não são
 
 ### Evidência Técnica:
 * **Teste de Integração:** `ExclusaoPessoasTest.cs` (Status: **FALHANDO** conforme esperado).
-* **Print:** ![Bug Cascata](../meuProjetoTestes/evidencias/TransacaoAparenteAposDeletarPessoa.png)
+* **Print:** ![Bug Cascata](meuProjetoTestes\evidencias\TransacaoAparenteAposDeletarPessoa.png)
 
 ---
 
@@ -25,7 +25,7 @@ Ao excluir um registro de `Pessoa`, as `Transações` vinculadas a ela não são
 Ao tentar salvar uma Categoria incompatível com o Tipo (ex: Categoria "Salário" com Tipo "Despesa"), o sistema exibe apenas "Erro ao salvar", sem explicar o motivo da regra de negócio.
 
 ### Evidência:
-* **Print:** ![Erro Categoria](../meuProjetoTestes/evidencias/ErroCategoria.png)
+* **Print:** ![Erro Categoria](meuProjetoTestes\evidencias\ErroCategoria.png)
 
 ## [BUG-03] Dashboard: Falha no Resumo Financeiro e Layout
 **Severidade:** Alta 🟠  
@@ -37,4 +37,4 @@ Os indicadores de "Saldo", "Receita" e "Despesa" não refletem os valores das tr
 ### Evidências:
 * **Lógica:** Transação de R$ 3.000,00 visível na lista, mas card de Receita exibe R$ 0,00.
 * **UI:** Textos sobrepostos no gráfico de pizza, tornando a legenda ilegível.
-* **Print:** ![Bug Dashboard](../meuProjetoTestes/evidencias/Dashboard.png)
+* **Print:** ![Bug Dashboard](meuProjetoTestes\evidencias\Dashboard.png)
