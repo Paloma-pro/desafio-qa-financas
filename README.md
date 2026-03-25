@@ -38,6 +38,9 @@ Durante o ciclo de testes, foram identificadas falhas críticas:
 
 > Detalhes técnicos e prints de evidência estão disponíveis no arquivo **[BUGS.md](./docs/BUGS.md)**.
 
+
+Nota sobre o CI/CD (GitHub Actions): > Os testes de integração de Back-end foram projetados para rodar localmente ou em um ambiente onde o código-fonte da API esteja presente. Como este repositório contém apenas a camada de testes, o pipeline do GitHub Actions executará com sucesso apenas os testes de Front-end (Unitários e E2E), enquanto os de Back-end devem ser validados via execução local com acesso ao código completo.
+
 ## 📁 Estrutura do Projeto
 ```text
 meuProjetoTestes/
