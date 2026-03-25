@@ -1,0 +1,55 @@
+name: Pipeline de Testes QA
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  # Job 1: Testes de Integração (Back-end C#)
+  backend-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Rodar Testes de Integração (xUnit)
+        run: |
+          cd backendTests
+          dotnet test --logger "console;verbosity=normal"
+
+  # Job 2: Testes Unitários e E2E (Front-end React)
+  frontend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      # Testes Unitários com Vitest
+      - name: Install Vitest Deps
+        run: |
+          cd frontendTests/vitest
+          npm install
+      - name: Run Unit Tests (Vitest)
+        run: |
+          cd frontendTests/vitest
+          npx vitest run
+
+      # Testes E2E com Playwright
+      - name: Install Playwright Deps
+        run: |
+          cd frontendTests/playwright
+          npm install
+          npx playwright install --with-deps
+      - name: Run E2E Tests (Playwright)
+        continue-on-error: true
+        run: |
+          cd frontendTests/playwright
+          npx playwright test

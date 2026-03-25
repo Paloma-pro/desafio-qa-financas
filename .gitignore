@@ -1,0 +1,25 @@
+# --- [ .NET / C# ] ---
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# --- [ Node.js / Playwright ] ---
+node_modules/
+.auth/
+.cache/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# --- [ Arquivos de Sistema ] ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- [ Temporários de Teste ] ---
+*.log
+*.tmp
